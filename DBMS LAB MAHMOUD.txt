@@ -1,0 +1,112 @@
+just like usual error, we can't have 2 same name database, it will show an error
+
+SHOW DATABASES -> to show the database
+
+DROP DATABASE ->
+
+CREATE DATABASE mynewdb; -> create a new database named "mynewdb"
+ 
+CREATE DATABASE IF NOT EXISTS mynewdb; -> checks if there a database is there named "mynewdb" if not then create one 
+
+---------------------------------------------------------------------------|
+												   |->we have to use the below code in the created database (Which in this case it is mynewdb))------------------------------------------------------------------------------------
+CREATE TABLE studenttable(
+student_id INT PRIMARY KEY, -> If I want to make this my primary key, then I will make it PRIMARY KEY
+					|-> This student_id is in INT (integer)
+student_name VARCHAR (20), -> student_name is in VARCHAR, 20 means 20 characters. VARCHAR means Vaariable character
+student_cgpa FLOAT, -> student_cgpa is in (FLOAT) form 
+student_department VARCHAR (3) -> also using VARCHAR of 3 character
+);
+--------------------------------------------------------|	
+								        |-> WE SHOULD NOT USE THIS CODE IN THE SERVER SQL, OR ELSE WE WILL GET ERROR!!
+
+
+after this is created
+-> we can check the following this on mynewdb ->
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+after that again on the database sql we will add value by : 
+
+INSERT INTO studenttable VALUES (
+452, 'Mohiuddin', 4.0,'CSE'
+);
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+to check the values we have added we use ->
+
+SELECT * FROM studenttable;
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+HOW TO ADD MANY DATA VALUES TOGETHER 
+
+INSERT INTO studenttable VALUES (56,"soleman",3.1,"BBA"), (365,"AMIN",3.08,"EEE"), (1,"afnan",3.1,"CSE");
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+NOW THAT WE HAVE CREATED A TABLE, NOW LETS SAY WE WANT TO ADD COLUMNS WE DO IT LIKE THIS: 
+
+ALTER TABLE studenttable ADD COLUMN (
+	student_phonenumber VARCHAR (13),
+	student_address VARCHAR (100)
+);
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+FOR DROPING THE ENTIRE FILE (then regret !!)
+
+DROP TABLE IF EXISTS studenttable;
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+hence it is better to always export it first! -> the process for this 
+EXPORT -> under
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+FOR DROPPING A COLOUMN 
+
+ALTER TABLE studenttable DROP COLUMN student_address;
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+FOR MODIFYING A DATA TYPE OF A COLOUMN
+
+ALTER TABLE studenttable MODIFY COLUMN student_phonenumber VARCHAR (11);
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+FOR PRINTING THE WHOLE TABLE 
+
+DESCRIBE studenttable;
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+# TRUNCATE -> a process to remove all the rows data/ values, not the SCHEMA
+# DROP -> A process to remove the whole table/ everything like EVERYTHING ~~!~
+# DELETE -> A process to remove data one by one, also we can add condition to delete a certain data/ values
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
